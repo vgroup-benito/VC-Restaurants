@@ -6,5 +6,7 @@
 Restaurant script for FiveM
 
 Preview: https://youtu.be/FPsmcxgMEcg
+
 Tebex: https://vgroup.tebex.io/
+
 Discord: https://discord.gg/uNSevXNgpg

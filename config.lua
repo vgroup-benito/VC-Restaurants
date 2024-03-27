@@ -1,5 +1,4 @@
 Config = {}
-Config.OxInventoryName = 'ox_inventory'
 Config.Locales = {
     Order = 'Order',
     Tray = 'Receive the tray',

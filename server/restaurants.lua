@@ -1,6 +1,5 @@
 ESX = exports['es_extended']:getSharedObject()
 
-local ox_inventory = exports[Config.OxInventoryName]
 
 local spawned = {}
 
@@ -33,8 +32,8 @@ end)
 
 
 RegisterNetEvent('vgroupcore:jedzenie:rastaurants:kup', function(table, price, netid)
-    local count = ox_inventory.GetItemCount(source, 'money')
-    if count >= price then ox_inventory.RemoveItem(source, 'money', price) else return TriggerClientEvent('ox_lib:notify', source, {
+    local count = exports.ox_inventory:GetItemCount(source, 'money')
+    if count >= price then exports.ox_inventory:RemoveItem(source, 'money', price) else return TriggerClientEvent('ox_lib:notify', source, {
         description = Config.Locales.NoMoney.. price - count ,
         type = 'error'
     }) end
@@ -55,7 +54,7 @@ end)
 
 RegisterNetEvent('vgroupcore:jedzenie:rastaurants:dajnatace', function(tabela)
 
-    ox_inventory.AddItem(source, tabela, 1)
+    exports.ox_inventory:AddItem(source, tabela, 1)
 
 end)
 

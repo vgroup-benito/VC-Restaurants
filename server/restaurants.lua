@@ -32,8 +32,9 @@ end)
 
 
 RegisterNetEvent('vgroupcore:jedzenie:rastaurants:kup', function(table, price, netid)
-    local count = exports.ox_inventory:GetItemCount(source, 'money')
-    if count >= price then exports.ox_inventory:RemoveItem(source, 'money', price) else return TriggerClientEvent('ox_lib:notify', source, {
+    local xPlayer  = ESX.GetPlayerFromId(source)
+    local count = xPlayer.getInventoryItem('money').count
+    if count >= price then xPlayer.removeInventoryItem('money', price) else return TriggerClientEvent('ox_lib:notify', source, {
         description = Config.Locales.NoMoney.. price - count ,
         type = 'error'
     }) end
